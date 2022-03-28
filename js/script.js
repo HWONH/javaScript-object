@@ -91,3 +91,64 @@ if($cur_month>=3&&$cur_month<=5){
 }else{
     document.write("<img src='img/img-w.jpg'>");
 }
+
+// 수학객체
+document.write("<h3>수학객체 : 숫자형 데이터로부터 적용할 수 없는 복잡한 형태의 수학결과물을 도출시 사용</h3>");
+var $num_max=Math.max(27,36,5,76);
+document.write("가장 큰 수를 반환 : "+$num_max+"<br>");
+var $num_min=Math.min(27,36,5,76);
+document.write("가장 작은 수를 반환 : "+$num_min+"<br>");
+
+var $num=1234.5678;
+var $round=Math.round($num);
+document.write("소숫점 첫째 자리에서 반올림 한 값(정수) : "+$round+"<br>");
+var $ceil=Math.ceil($num);
+document.write("소숫점 첫째 자리에서 무조건 올림 한 값(정수) : "+$ceil+"<br>");
+var $floor=Math.floor($num);
+document.write("소숫점 첫째 자리에서 무조건 내림 한 값(정수) : "+$floor+"<br>");
+var $random=Math.random();
+document.write("0~1 사이의 난수를 반환 : "+$random+"<br>");
+
+// 1~10 사이의 값을 랜덤 방식으로 반환(정수값)
+var $int_01=Math.ceil(Math.random()*10);
+/* 
+    최소값 : 0.001 => 0.01 => 1(올림적용)
+    최대값 : 0.999 => 9.99 => 10(올림적용)
+*/
+document.write("1~10 사이의 정수값을 랜덤 방식 적용 "+$int_01+"<br>");
+
+var $int_02=Math.floor(Math.random()*10)+1;
+/* 
+    최소값 : 0.001 => 0.01 => 0(내림적용) => 1(+1)
+    최대값 : 0.999 => 9.99 => 9(내림적용) => 10(+1)
+*/
+document.write("1~10 사이의 정수값을 랜덤 방식 적용 "+$int_02+"<br>");
+
+// 실습 1~25 사이의 값을 랜덤 방식으로 반환
+var $int_03=Math.ceil(Math.random()*25);
+/* 
+    최소값 : 0.001 => 0.025 => 1(올림적용)
+    최대값 : 0.999 => 24.75 => 25(올림적용)
+*/
+document.write("1~25 사이의 정수값을 랜덤 방식 적용 "+$int_03+"<br>");
+
+// 11~100 사이의 값을 랜덤 방식으로 반환(정수값)
+var $int_04=Math.ceil(Math.random()*90)+10;
+/* 
+    최소값 : 0.001 => 0.09 => 1(올림적용) => 11(+10)
+    최대값 : 0.999 => 89.91 => 90(올림적용) => 100(+10)
+*/
+document.write("11~100 사이의 정수값을 랜덤 방식 적용 "+$int_04+"<br>");
+
+// 스타크래프트의 종족 선택시 랜덤방식
+var $rand = Math.random(); // 명령을 하는 random의 경우는 기능으로 소괄호가 뒤에 붙는다
+if($rand>0&&$rand<=0.333333333){
+    document.write("<img src='img/protoss.gif' alt='프로토스'>");
+}else if($rand>0.333333333&&$rand<=0.666666666){
+    document.write("<img src='img/terran.gif' alt='태린'>");
+}else{
+    document.write("<img src='img/zerg.gif' alt='저그'>");
+}
+
+var $pi=Math.PI; // 고정값을 갖고 있는 PI의 경우는 속성으로 소괄호가 뒤에 붙지 않는다
+console.log($pi);
