@@ -152,3 +152,64 @@ if($rand>0&&$rand<=0.333333333){
 
 var $pi=Math.PI; // 고정값을 갖고 있는 PI의 경우는 속성으로 소괄호가 뒤에 붙지 않는다
 console.log($pi);
+
+// 문자 객체
+document.write("<h3>문자 객체 : 문자 객체의 정보를 반환 + 문자 객체의 조작</h3>");
+var $str="Thank you hello nice to meet you";
+var $charAt=$str.charAt(2);
+// 좌측으로부터 인덱스 번호가 2인 문자를 반환
+console.log($charAt); // a
+var $indexOf=$str.indexOf("you");
+// 좌측으로부터 찾는 문자의 최초로 일치하는 인덱스 번호를 반환
+console.log($indexOf); // 6
+var $indexOf_cf=$str.indexOf("you", 10);
+// 인덱스 번호 10 이하의 문자를 제외하고 그 이후에 나오는 문자의 인덱스 번호를 반환
+console.log($indexOf_cf); // 29
+var $match=$str.match("nice");
+console.log($match); // ["nice", index: 16, input: "Thank you hello nice to meet you", groups: undefined]
+// 웹서비스 상에서 구매자와 판매자의 연결을 할 수 있는 도구의 특정적인 단어를 찾고자 할 때 사용(이메일의 경우 @ 표기를 찾는다.)
+console.log($match[0]=="nice"); // true
+
+var $match_null=$str.match("good");
+console.log($match_null); // null
+
+var $replace_str=$str.replace("hello", "hi");
+// replace("바꿀 문자", "새문자") : 교체
+// replace("바꿀 문자", "") : 기존 문자 삭제
+console.log($replace_str);
+
+var $slice=$str.slice(10, 15); // 서수; 11,12,13,14,15
+// 10번째 이후 문자부터 15번째 이후 문자를 자르고 반환
+console.log($slice); // hello
+
+var $substring=$str.substring(6, 9); // 인덱스; 6,7,8
+// 인덱스 번호 6번 문자부터 인덱스 번호 9번 포함 이후 문자를 자르고 반환
+console.log($substring); // you
+
+var $substr=$str.substr(6, 3); // 6,7,8
+// 인덱스 번호 6번 문자부터 3개의 문자를 자르고 반환
+console.log($substr); // you
+
+var $str_length=$str.length; // 문자열에서 전체 개수를 반환(개수=마지막 인덱스번호+1)
+console.log($str_length+"개");
+
+var $hash="#kids_0";
+var $arr_hash=$hash.split("_"); // 지정한 문자를 기준으로 각 문자들을 배열 데이터로 따로 저장
+console.log($arr_hash); // ["#kids", "0"]
+
+var $phone="01012345678";
+var $ch_phone=$phone.substr(0, 7)+"****";
+document.write($ch_phone+"<br>"); // 0101234****
+
+// 010 12345678, 010/1234/5678, +821012345678
+var $phone_01="010-1234-5678"; // 010-1234-****
+var $ch_phone_01=$phone_01.substr(0, $phone_01.length-4)+"****";
+document.write($ch_phone_01+"<br>");
+
+var $op_phone="010-4679-1234";
+var $ch_op_phone=$op_phone.replace("-", "");
+console.log($ch_op_phone); // 0104679-1234
+var $final_op_phone=$ch_op_phone.replace("-", "");
+console.log($final_op_phone); // 01046791234
+
+// <a href="tel:01012345678">전화걸기</a>
